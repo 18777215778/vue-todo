@@ -2,13 +2,12 @@ const path = require('path');
 const VueLoaderPlugin = require('vue-loader/lib/plugin');
 const HTMLPlugin = require('html-webpack-plugin');
 const webpack = require('webpack');
-const ExtractPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
     mode: 'development',
     entry: path.join(__dirname, 'src/index.js'),
     output: {
-        filename: "bundle.js",
+        filename: "bundle.[hash:8].js",
         path: path.join(__dirname, 'dist')
     },
     module: {
@@ -71,5 +70,4 @@ module.exports = {
     devServer: {
         hot: true,
     },
-    devtool: "#cheap-module-eval-source-map"
 };
